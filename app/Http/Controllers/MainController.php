@@ -8,12 +8,16 @@ class MainController extends Controller
 {
     public function home()
     {
-
+        return view('about', [
+            'title' => 'Andrew Auxilio'
+        ]);
     }
 
     public function projects()
     {
-
+        return view('projects', [
+            'title' => 'Projects'
+        ]);
     }
 
     public function resume()
