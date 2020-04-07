@@ -15,7 +15,18 @@ class CreateArticlesTable extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->string('title');
+            $table->text('summary');
+            $table->text('body');
+            $table->text('image');
             $table->timestamps();
+
+            //Sets a constraint if user is deleted, all the articles associated with user gets deleted.
+            $table->foreign('user_id')
+            ->references('id')
+            ->on('users')
+            ->onDelete('cascade');
         });
     }
 

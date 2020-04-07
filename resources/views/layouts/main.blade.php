@@ -42,7 +42,7 @@
                         <a id="nav-link" class="nav-link" href="{{ route('resume')}}">Resume</a>
                     </li>
                     <li class="nav-item">
-                        <a id="nav-link" class="nav-link" href="{{ route('blog')}}">Blog</a>
+                        <a id="nav-link" class="nav-link" href="{{ route('articles.index')}}">Blog</a>
                     </li>
                     <li v-if="isLoggedIn" class="nav-item">
                         <a id="nav-link" class="nav-link" href="{{ route('dashboard')}}">Dashboard</a>
@@ -52,24 +52,25 @@
         </nav>
     </div>
 
-    @yield('content')
-    
     <div>
-        <!-- Footer -->
-        <footer class="animated fadeIn slow footer">
-            <!-- Social Media Accounts --->
-            <div class="container text-center w-50 mx-auto">
-                <a href="https://github.com/andrewauxilio" target="_blank" class="fab fa-github"></a>
-                <a href="https://www.facebook.com/andrewauxilio" target="_blank"
-                    class="fab fa-facebook-f"></a>
-                <a href="https://www.linkedin.com/in/andrewanthonyauxilio/" target="_blank"
-                    class="fab fa-linkedin"></a>
-                <a href="https://www.instagram.com/andrew.auxilio/" target="_blank"
-                    class="fab fa-instagram"></a>
-                <a href="#" class="fab fa-google"></a>
-            </div>
-        </footer>
+        @yield('content')
     </div>
+    
+    <!-- Footer -->
+    <footer class="animated fadeIn slow footer">
+        <!-- Social Media Accounts --->
+        <div class="container text-center w-50 mx-auto">
+            <a href="https://github.com/andrewauxilio" target="_blank" class="fab fa-github"></a>
+            <a href="https://www.facebook.com/andrewauxilio" target="_blank"
+                class="fab fa-facebook-f"></a>
+            <a href="https://www.linkedin.com/in/andrewanthonyauxilio/" target="_blank"
+                class="fab fa-linkedin"></a>
+            <a href="https://www.instagram.com/andrew.auxilio/" target="_blank"
+                class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-google"></a>
+        </div>
+    </footer>
+  
 </body>
 
 </html>

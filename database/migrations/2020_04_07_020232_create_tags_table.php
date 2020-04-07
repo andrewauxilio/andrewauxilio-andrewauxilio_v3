@@ -15,7 +15,23 @@ class CreateTagsTable extends Migration
     {
         Schema::create('tags', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->timestamps();
+        });
+
+        //article_tag (pivot table)
+        Schema::create('article_tag', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('article_id');
+            $table->unsignedBigInteger('tag_id');
+            $table->timestamps();
+
+            //Making sure that a record is not duplicated
+            $table->unique(['article_id', 'tag_id']);
+
+            //Foreign keys
+            $table->foreign('article_id')->references('id')->on('articles')->onDelete('cascade');
+            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
         });
     }
 
