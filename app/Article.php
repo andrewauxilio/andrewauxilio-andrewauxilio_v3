@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     protected $fillable = [
-        'title', 'summary', 'body', 'image'
+        'title', 'summary', 'body', 'image', 'user_id'
     ];
 
     //Inverse one-to-many relationship with user

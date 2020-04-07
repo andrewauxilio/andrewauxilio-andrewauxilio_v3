@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Article;
 
 class MainController extends Controller
 {
@@ -29,9 +30,13 @@ class MainController extends Controller
 
     public function blog()
     {
-        return view('blog', [
-            'title' => 'Blog'
+
+        $articles = Article::orderBy('created_at', 'DESC')->paginate(5);
+        return view('articles.index', [
+            'title' => 'Blog',
+            'articles' => $articles 
         ]);
+    
     }
     
 }

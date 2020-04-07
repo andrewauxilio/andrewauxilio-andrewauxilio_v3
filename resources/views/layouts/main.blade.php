@@ -42,7 +42,7 @@
                         <a id="nav-link" class="nav-link" href="{{ route('resume')}}">Resume</a>
                     </li>
                     <li class="nav-item">
-                        <a id="nav-link" class="nav-link" href="{{ route('articles.index')}}">Blog</a>
+                        <a id="nav-link" class="nav-link" href="{{ route('blog')}}">Blog</a>
                     </li>
                     <li v-if="isLoggedIn" class="nav-item">
                         <a id="nav-link" class="nav-link" href="{{ route('dashboard')}}">Dashboard</a>

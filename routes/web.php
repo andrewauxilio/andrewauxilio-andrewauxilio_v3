@@ -16,12 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'MainController@home')->name('about');
 Route::get('/projects', 'MainController@projects')->name('projects');
 Route::get('/resume', 'MainController@resume')->name('resume');
+Route::get('/blog', 'ArticlesController@index')->name('blog');
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
-Route::get('/blog', 'ArticlesController@index')->name('articles.index');
-Route::get('/articles/create', 'ArticlesController@create')->name('articles.create');
-Route::get('/articles/{article}/edit', 'ArticlesController@edit')->name('articles.edit');
-Route::get('/articles/{article}', 'ArticlesController@show')->name('articles.show');
+Route::get('/dashboard/articles', 'ArticlesController@index')->name('articles.index');
+Route::post('/dashboard/articles', 'ArticlesController@store')->name('articles.store');
+Route::get('/dashboard/articles/create', 'ArticlesController@create')->name('articles.create');
+Route::get('/dashboard/articles/{article}/edit', 'ArticlesController@edit')->name('articles.edit');
+Route::get('/dashboard/articles/{article}', 'ArticlesController@show')->name('articles.show');
 
 Auth::routes();
 

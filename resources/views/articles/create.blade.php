@@ -7,26 +7,76 @@
       <!-- general form elements -->
       <div class="card card-primary">
           <div class="card-header">
-              <h3 class="card-title">Quick Example</h3>
+              <h3 class="card-title">Create New Article Form</h3>
           </div>
           <!-- /.card-header -->
           <!-- form start -->
-          <form role="form">
+          <form method="POST" action="{{ route('articles.store') }}">
+              @csrf
               <div class="card-body">
+
+                  {{-- Title Field --}}
                   <div class="form-group">
-                      <label for="exampleInputEmail1">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                  </div>
-                  <div class="form-group">
-                      <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                      <label for="inputTitle">Title</label>
+                      <input 
+                        type="text" 
+                        name="title" 
+                        value="{{ old('title') }}"  
+                        id="inputTitle" 
+                        placeholder="Enter title"
+                        class="form-control @error('title') border border-danger @enderror"
+                        required>
+                      <div class="text-danger">
+                        {{ $errors->first('title') }}
+                      </div>
                   </div>
 
+                  {{-- Summary Field --}}
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <x-editor></x-editor>
+                      <label for="inputSummary">Summary</label>
+                      <input 
+                        type="text" 
+                        name="summary" 
+                        value="{{ old('summary') }}"  
+                        id="inputSummary" 
+                        placeholder="Enter summary"
+                        class="form-control @error('summary') border border-danger @enderror"
+                        required>
+                      <div class="text-danger">
+                        {{ $errors->first('summary') }}
+                      </div>
+                  </div>
+
+                  {{-- Body Field --}}
+                  <div class="form-group">
+                    <label>Body</label>
+                    <textarea 
+                      name="body" 
+                      value="{{ old('body') }}" 
+                      id="summernote"
+                      class="class="form-control @error('body') border border-danger @enderror""
+                      required>
+                    </textarea>
+                    <div class="text-danger">
+                      {{ $errors->first('body') }}
+                    </div>
                 </div>
-                  
+
+                {{-- Image Field --}}
+                <div class="form-group">
+                  <label for="inputSummary">Image</label>
+                  <input 
+                    type="text" 
+                    name="image" 
+                    value="{{ old('image') }}"  
+                    id="inputImage" 
+                    placeholder="Enter image URL"
+                    class="form-control @error('image') border border-danger @enderror"
+                    required>
+                  <div class="text-danger">
+                    {{ $errors->first('image') }}
+                  </div>
+                </div>
               </div>
               <!-- /.card-body -->
 
@@ -39,4 +89,12 @@
   </div>
   <!--/.col (right) -->
 </div>
+
+<script>
+  $('#summernote').summernote({
+    placeholder: 'Hello Bootstrap 4',
+    tabsize: 2,
+    height: 100,
+  });
+</script>
 @endsection
