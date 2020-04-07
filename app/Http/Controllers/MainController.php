@@ -22,7 +22,9 @@ class MainController extends Controller
 
     public function resume()
     {
-
+        return view('resume', [
+            'title' => 'Resume'
+        ]);
     }
 
     public function blog()

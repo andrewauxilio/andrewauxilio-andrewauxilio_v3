@@ -2,7 +2,11 @@
 
 @section('content')
 <!-- Home View-->
-<div class="home">
+<div id="app">
+    <router-view />
+</div>
+<div class="home" >
+    
     <div class="animated fadeIn slow container-fluid inner">
         <div class="row h-100">
             <div class="mx-auto my-auto">

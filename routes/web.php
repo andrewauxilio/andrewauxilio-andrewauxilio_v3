@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'MainController@home')->name('about');
 Route::get('/projects', 'MainController@projects')->name('projects');
+Route::get('/resume', 'MainController@resume')->name('resume');
 
 
 //Auth::routes();

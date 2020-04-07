@@ -13,6 +13,8 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+
+    @yield('head')
     
     <title>{{ $title }}</title>
 </head>
