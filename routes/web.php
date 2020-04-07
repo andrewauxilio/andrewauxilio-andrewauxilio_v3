@@ -16,8 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'MainController@home')->name('about');
 Route::get('/projects', 'MainController@projects')->name('projects');
 Route::get('/resume', 'MainController@resume')->name('resume');
-
-
-//Auth::routes();
-
+Route::get('/blog', 'MainController@blog')->name('blog');
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
+
+Route::get('/articles/create', 'ArticlesController@create')->name('articles.create');
+Route::get('/articles/{article}/edit', 'ArticlesController@edit')->name('articles.edit');
+Route::get('/articles/{}', 'ArticlesController@show')->name('articles.show');
+
+Auth::routes();
+
+

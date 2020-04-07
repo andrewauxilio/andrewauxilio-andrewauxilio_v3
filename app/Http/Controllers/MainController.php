@@ -29,7 +29,9 @@ class MainController extends Controller
 
     public function blog()
     {
-
+        return view('blog', [
+            'title' => 'Blog'
+        ]);
     }
     
 }

@@ -33,19 +33,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="nav navbar-nav mx-auto">
                     <li class="nav-item active">
-                        <a id="nav-link" class="nav-link" href="#">About</a>
+                        <a id="nav-link" class="nav-link" href="{{ route('about')}}">About</a>
                     </li>
-                    <li class="nav-item active">
-                        <a id="nav-link" class="nav-link" href="/#">Projects</a>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link" href="{{ route('projects')}}">Projects</a>
                     </li>
-                    <li class="nav-item active">
-                        <a id="nav-link" class="nav-link" href="/#">Resume</a>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link" href="{{ route('resume')}}">Resume</a>
                     </li>
-                    <li class="nav-item active">
-                        <a id="nav-link" class="nav-link" href="/#">Blog</a>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link" href="{{ route('blog')}}">Blog</a>
                     </li>
-                    <li v-if="isLoggedIn" class="nav-item active">
-                        <a id="nav-link" class="nav-link" href="/#">Dashboard</a>
+                    <li v-if="isLoggedIn" class="nav-item">
+                        <a id="nav-link" class="nav-link" href="{{ route('dashboard')}}">Dashboard</a>
                     </li>
                 </ul>
             </div>

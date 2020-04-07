@@ -23,7 +23,9 @@ class ArticlesController extends Controller
      */
     public function create()
     {
-        //
+        return view('articles.create', [
+            'title' => 'Create new article'
+        ]);
     }
 
     /**
@@ -45,7 +47,9 @@ class ArticlesController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('articles.create', [
+            'title' => 'Article'
+        ]);
     }
 
     /**
@@ -56,7 +60,9 @@ class ArticlesController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('articles.edit', [
+            'title' => 'Edit article'
+        ]);
     }
 
     /**
