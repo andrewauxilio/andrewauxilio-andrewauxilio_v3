@@ -26,7 +26,7 @@
             </div>
             <div id="name">
                 <h1>Andrew Auxilio</h1>
-                <h2>Website Developer</h2>
+                <h2>Application Developer</h2>
             </div>
             <div id="contactDetails">
                 <ul>
@@ -68,10 +68,13 @@
                 <div class="sectionContent">
                     <ul class="keySkills">
                         <li>HTML5 & CSS3</li>
-                        <li>VueJS</li>
+                        <li>PHP & JavaScript</li>
                         <li>Laravel</li>
+                        <li>VueJS</li>
+                        <li>Linux</li>
                         <li>NodeJS</li>
-                        <li>Version Control - Git</li>
+                        <li>MySQL, MSSQL, MongoDB</li>
+                        <li>Version Control</li>
                     </ul>
                 </div>
                 <div class="clear"></div>

@@ -20,6 +20,8 @@
 </head>
 
 <body>
+    @yield('particles')
+    
     <!-- Navbar -->
     <div class="animated fadeIn slow">
         <nav class="navbar navbar-expand-md navbar-fixed-top navbar-light bg-light main-nav outer shadow">
