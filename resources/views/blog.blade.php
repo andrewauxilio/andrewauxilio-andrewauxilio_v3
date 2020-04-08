@@ -2,7 +2,7 @@
 
 @section('head')
     <!-- Styles -->
-    <link href="{{ asset('css/blog.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main/blog.css') }}" rel="stylesheet">
 @endsection
 
 @section('content')

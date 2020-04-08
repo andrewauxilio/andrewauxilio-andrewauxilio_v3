@@ -2,12 +2,10 @@
 
 @section('head')
     <!-- Blog Style -->
-    <link href="{{ asset('css/blog.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main/blog.css') }}" rel="stylesheet">
 
     <!-- PrismJS Style -->
-    <link href="{{ asset('css/prism.css') }}" rel="stylesheet">
-
-
+    <link href="{{ asset('css/prismjs/prism.css') }}" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -74,5 +72,5 @@ Auth::routes();
 </div>
 
     <!-- PrismJS Script -->
-    <script src="{{ asset('js/prism.js') }}" defer></script>
+    <script src="{{ asset('js/prismjs/prism.js') }}" defer></script>
 @endsection

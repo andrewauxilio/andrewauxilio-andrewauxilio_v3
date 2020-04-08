@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'MainController@home')->name('about');
 Route::get('/projects', 'MainController@projects')->name('projects');
 Route::get('/resume', 'MainController@resume')->name('resume');
-Route::get('/blog', 'ArticlesController@index')->name('blog');
+Route::get('/blog', 'MainController@blog')->name('blog');
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
 Route::get('/dashboard/articles', 'ArticlesController@index')->name('articles.index');

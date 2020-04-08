@@ -32,7 +32,7 @@ class MainController extends Controller
     {
 
         $articles = Article::orderBy('created_at', 'DESC')->paginate(5);
-        return view('articles.index', [
+        return view('blog', [
             'title' => 'Blog',
             'articles' => $articles 
         ]);

@@ -1,5 +1,14 @@
 @extends('layouts.admin')
 
+@section('admin-head-css')
+<!-- Summernote Style -->
+<link href="{{ asset('css/summernote/summernote-bs4.min.css') }}" rel="stylesheet">
+@endsection
+
+@section('admin-head-js')
+<script src="{{ asset('js/summernote/summernote-bs4.min.js') }}"></script>
+@endsection
+
 @section('admin-content')
 <div class="row mt-4">
   <!-- left column -->
@@ -89,7 +98,9 @@
   </div>
   <!--/.col (right) -->
 </div>
+@endsection
 
+@section('admin-scripts')
 <script>
   $('#summernote').summernote({
     placeholder: 'Hello Bootstrap 4',
