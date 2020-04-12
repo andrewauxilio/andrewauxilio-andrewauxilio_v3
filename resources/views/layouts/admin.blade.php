@@ -13,11 +13,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <title>{{ $title }}</title>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    @yield('admin-head-css')
-
-    <!-- REQUIRED SCRIPTS -->
-    {{-- <script src="{{ asset('js/app.js') }}" defer></script>
-    @yield('admin-head-js') --}}
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -136,9 +131,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- REQUIRED SCRIPTS -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    @yield('admin-scripts')
-    
+    @yield('scripts')
 
 </body>
 
 </html>
+
+@yield('style')

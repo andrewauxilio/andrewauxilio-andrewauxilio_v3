@@ -53,10 +53,10 @@
                     <label>Body</label>
                     <textarea 
                       name="body" 
-                      value="{{ $article->body }}" 
                       id="summernote"
                       class="class="form-control @error('body') border border-danger @enderror""
                       required>
+                      {!! $article->body !!}
                     </textarea>
                     <div class="text-danger">
                       {{ $errors->first('body') }}

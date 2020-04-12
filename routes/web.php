@@ -25,6 +25,7 @@ Route::get('/dashboard/articles/create', 'ArticlesController@create')->name('art
 Route::get('/dashboard/articles/{article}/edit', 'ArticlesController@edit')->name('articles.edit')->middleware('auth');
 Route::get('/dashboard/articles/{article}', 'ArticlesController@show')->name('articles.show');
 Route::put('/dashboard/articles/{article}', 'ArticlesController@update')->name('articles.update')->middleware('auth');
+Route::delete('/dashboard/articles/{article}', 'ArticlesController@destroy')->name('articles.destroy')->middleware('auth');
 
 Auth::routes();
 
