@@ -10,3 +10,9 @@ require('./bootstrap');
 //Vue Router 
 require('./router');
 
+$(document).ready(function() {
+    $('#summernote').summernote({
+        tabsize: 2,
+        height: 400
+    }); 
+});

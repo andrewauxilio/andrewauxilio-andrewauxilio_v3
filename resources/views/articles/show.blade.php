@@ -36,7 +36,7 @@
             <div class="row">
                 <div class="col-lg-8 col-md-10 mx-auto">
                     <p class="post-content text-justify">
-                        <span>{{ $article->body }}</span>
+                        <span>{!! $article->body !!}</span>
                         {{-- <pre><code class="language-php">
 use Illuminate\Support\Facades\Route;
 

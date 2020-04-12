@@ -11,6 +11,7 @@ try {
     window.Popper = require('popper.js').default;
     require('bootstrap');
     require('admin-lte');
+    require('summernote');
 } catch (e) {}
 
 /**

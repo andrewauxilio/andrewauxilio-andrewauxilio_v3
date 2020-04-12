@@ -34,8 +34,8 @@
                             @foreach($articles as $article)
                             <tr>
                                 <td>
-                                    <button type="button" class="btn btn-block btn-primary"><i class="fas fa-edit"></i></button>
-                                    <button type="button" class="btn btn-block btn-danger"><i class="fas fa-trash"></i></button>
+                                    <a href="{{ route('articles.edit', $article->id) }}" class="btn btn-block btn-primary"><i class="fas fa-edit"></i></a>
+                                    <a type="button" class="btn btn-block btn-danger"><i class="fas fa-trash"></i></a>
                                 </td>
                                 <td>{{ $article->user->name }}</td>
                                 <td>{{ $article->title }}</td>

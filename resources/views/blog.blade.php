@@ -12,6 +12,7 @@
             <div class="row">
                 <div class="col-lg-8 col-md-10 mx-auto text-center">
                     @foreach($articles as $article)
+                        @if($article->visible == true)
                         <div class="post-preview">
                             <a href="{{ route('articles.show', $article->id) }}">
                                 <h2 class="post-title">{{ $article->title }}</h2>
@@ -23,6 +24,7 @@
                                 {{ \Carbon\Carbon::parse($article->created_at)->format('d/m/Y') }}
                             </p>
                         </div>
+                        @endif
                     @endforeach
                     <hr />
                     <div class="d-flex justify-content-center">

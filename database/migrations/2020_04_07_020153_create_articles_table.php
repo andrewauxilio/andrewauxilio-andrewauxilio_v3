@@ -17,6 +17,7 @@ class CreateArticlesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('title');
+            $table->boolean('visible')->default(true);
             $table->text('summary');
             $table->text('body');
             $table->text('image');

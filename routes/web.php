@@ -24,6 +24,7 @@ Route::post('/dashboard/articles', 'ArticlesController@store')->name('articles.s
 Route::get('/dashboard/articles/create', 'ArticlesController@create')->name('articles.create')->middleware('auth');
 Route::get('/dashboard/articles/{article}/edit', 'ArticlesController@edit')->name('articles.edit')->middleware('auth');
 Route::get('/dashboard/articles/{article}', 'ArticlesController@show')->name('articles.show');
+Route::put('/dashboard/articles/{article}', 'ArticlesController@update')->name('articles.update')->middleware('auth');
 
 Auth::routes();
 

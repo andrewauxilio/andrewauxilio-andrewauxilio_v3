@@ -81,8 +81,10 @@ class ArticlesController extends Controller
      */
     public function edit($id)
     {
+        $article = Article::findOrFail($id);
         return view('articles.edit', [
-            'title' => 'Edit article'
+            'title' => 'Edit Article',
+            'article' => $article
         ]);
     }
 
@@ -93,9 +95,19 @@ class ArticlesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Article $article)
     {
-        //
+        $updatedAttributes = $request->validate([
+            'title' => 'required',
+            'summary' => 'required',
+            'body' => 'required',
+            'image' => 'required'
+        ]);
+
+        $article->update($updatedAttributes);
+
+        //3. Redirect to blog view
+        return redirect(route('articles.index'));
     }
 
     /**
