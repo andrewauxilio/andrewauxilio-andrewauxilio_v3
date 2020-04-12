@@ -19,10 +19,10 @@ Route::get('/resume', 'MainController@resume')->name('resume');
 Route::get('/blog', 'MainController@blog')->name('blog');
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
-Route::get('/dashboard/articles', 'ArticlesController@index')->name('articles.index');
-Route::post('/dashboard/articles', 'ArticlesController@store')->name('articles.store');
-Route::get('/dashboard/articles/create', 'ArticlesController@create')->name('articles.create');
-Route::get('/dashboard/articles/{article}/edit', 'ArticlesController@edit')->name('articles.edit');
+Route::get('/dashboard/articles', 'ArticlesController@index')->name('articles.index')->middleware('auth');
+Route::post('/dashboard/articles', 'ArticlesController@store')->name('articles.store')->middleware('auth');
+Route::get('/dashboard/articles/create', 'ArticlesController@create')->name('articles.create')->middleware('auth');
+Route::get('/dashboard/articles/{article}/edit', 'ArticlesController@edit')->name('articles.edit')->middleware('auth');
 Route::get('/dashboard/articles/{article}', 'ArticlesController@show')->name('articles.show');
 
 Auth::routes();

@@ -1,11 +1,5 @@
 @extends('layouts.main')
 
-@section('particles')
-<div id="app">
-    <router-view />
-</div>
-@endsection
-
 @section('content')
 <!-- Home View-->
 <div class="home">

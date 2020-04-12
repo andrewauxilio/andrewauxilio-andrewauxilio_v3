@@ -16,8 +16,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     @yield('admin-head-css')
 
     <!-- REQUIRED SCRIPTS -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    @yield('admin-head-js')
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script>
+    @yield('admin-head-js') --}}
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -51,7 +51,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <img src="{{ asset('images/avatars/avatar_cartoon.png') }}" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
+                        @if(Auth::user())
                         <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+                        @endif
                     </div>
                 </div>
 
@@ -131,6 +133,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- REQUIRED SCRIPTS -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     @yield('admin-scripts')
+    
 
 </body>
 

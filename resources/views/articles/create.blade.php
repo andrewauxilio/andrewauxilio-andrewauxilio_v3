@@ -6,7 +6,7 @@
 @endsection
 
 @section('admin-head-js')
-<script src="{{ asset('js/summernote/summernote-bs4.min.js') }}"></script>
+
 @endsection
 
 @section('admin-content')
@@ -101,6 +101,7 @@
 @endsection
 
 @section('admin-scripts')
+<script src="{{ asset('js/summernote/summernote-bs4.min.js') }}"></script>
 <script>
   $('#summernote').summernote({
     placeholder: 'Hello Bootstrap 4',

@@ -20,7 +20,9 @@
 </head>
 
 <body>
-    @yield('particles')
+    <div id="app">
+        <router-view />
+    </div>
     
     <!-- Navbar -->
     <div class="animated fadeIn slow">
@@ -44,9 +46,11 @@
                     <li class="nav-item">
                         <a id="nav-link" class="nav-link" href="{{ route('blog')}}">Blog</a>
                     </li>
-                    <li v-if="isLoggedIn" class="nav-item">
+                    @if (Auth::user() != null)
+                    <li class="nav-item">
                         <a id="nav-link" class="nav-link" href="{{ route('dashboard')}}">Dashboard</a>
                     </li>
+                    @endif
                 </ul>
             </div>
         </nav>

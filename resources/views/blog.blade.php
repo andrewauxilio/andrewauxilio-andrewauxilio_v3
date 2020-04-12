@@ -18,9 +18,9 @@
                                 <h3 class="post-subtitle">{{ $article->summary }}</h3>
                             </a>
                             <p class="post-meta">
-                                Posted by
                                 <a href="https://www.linkedin.com/in/andrewanthonyauxilio/">{{ $article->user->name}}</a>
-                                {{ $article->created_at }}
+                                on
+                                {{ \Carbon\Carbon::parse($article->created_at)->format('d/m/Y') }}
                             </p>
                         </div>
                     @endforeach
