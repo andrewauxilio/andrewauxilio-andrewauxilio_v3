@@ -64673,8 +64673,8 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\NewPC\Desktop\andrewauxilio_v3\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\NewPC\Desktop\andrewauxilio_v3\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Amanda\Desktop\andrewauxilio-andrewauxilio_v3\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Amanda\Desktop\andrewauxilio-andrewauxilio_v3\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

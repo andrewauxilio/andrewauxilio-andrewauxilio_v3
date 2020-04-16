@@ -83,11 +83,74 @@
 
               <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="button" class="btn btn-danger float-right" onclick="openModal({{ $article->id }})">
+                    <i class="fas fa-trash"></i>
+                    <span class="text-white">Delete</span>
+                  </button>
               </div>
           </form>
       </div>
       <!-- /.card -->
   </div>
+
   <!--/.col (right) -->
+    <!-- Delete Modal -->
+    <div class="modal" id="deleteModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal body -->
+            <div class="modal-body">
+                <h2>Are you sure?</h2>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <form method="POST" action="{{ route('articles.destroy', $article->id) }}">
+                @csrf
+                @method('DELETE')
+                    <button type="button" class="btn btn-success" onclick="closeModal()">No</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>
 </div>
+
+@endsection
+
+@section('scripts')
+<script>
+
+    //Assign modal element to variable
+    let modal = document.getElementById("deleteModal");
+
+    let article = document.getElementById("article");
+
+    //Open modal function
+    function openModal() {
+        modal.style.display = "block";
+    }
+
+    //Close modal function
+     function closeModal() {
+        modal.style.display = "none";
+    }
+
+    //Close modal function (click anywhere)
+    window.onclick = function(event) {
+        if (event.target == modal) {
+        modal.style.display = "none";
+        }
+    }
+</script>
+@endsection
+
+@section('style')
+<style>
+    .modal {
+        display: none;
+        background-color: rgba(255, 255, 255, 0.5);;
+    }
+</style>
 @endsection
