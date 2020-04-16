@@ -27,6 +27,12 @@ Route::get('/dashboard/articles/{article}/edit', 'ArticlesController@edit')->nam
 Route::get('/dashboard/articles/{article}', 'ArticlesController@show')->name('articles.show');
 Route::put('/dashboard/articles/{article}', 'ArticlesController@update')->name('articles.update')->middleware('auth');
 
+Route::fallback(function () {
+    return view('404', [
+        'title' => 'Page Not Found'
+    ]);
+});
+
 Auth::routes();
 
 
