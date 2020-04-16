@@ -28,10 +28,23 @@ class MainController extends Controller
         ]);
     }
 
-    public function blog()
+    public function blog(Request $request)
     {
+        //Query input for searching articles
+        $query = $request->input('query');
 
-        $articles = Article::orderBy('created_at', 'DESC')->paginate(5);
+        //If there is a query input
+        if($query)
+        {
+            //Search for all articles which titles match the query
+            $articles = Article::where('title', 'LIKE', "%$query%")->paginate(5);
+        }
+        else
+        {
+            //Display all articles
+            $articles = Article::orderBy('created_at', 'DESC')->paginate(5);
+        }
+
         return view('blog', [
             'title' => 'Blog',
             'articles' => $articles 

@@ -13,12 +13,25 @@ class ArticlesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //$articles = Article::take(8)->latest()->get();
-        $articles = Article::orderBy('created_at', 'DESC')->paginate(12);
+        //Query input for searching articles
+        $query = $request->input('query');
+
+        //If there is a query input
+        if($query)
+        {
+            //Search for all articles which titles match the query
+            $articles = Article::where('title', 'LIKE', "%$query%")->paginate(12);
+        }
+        else
+        {
+            //Display all articles
+            $articles = Article::orderBy('created_at', 'DESC')->paginate(12);
+        }
+
         return view('articles.index', [
-            'title' => 'Blog',
+            'title' => 'Blog Posts',
             'articles' => $articles 
         ]);
     }
@@ -30,6 +43,7 @@ class ArticlesController extends Controller
      */
     public function create()
     {
+        //Return create article page
         return view('articles.create', [
             'title' => 'Create new article'
         ]);

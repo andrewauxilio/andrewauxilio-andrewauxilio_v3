@@ -8,6 +8,19 @@
 @section('content')
 <!-- Blog View-->
     <div class="container-fluid blog mt-2">
+        <div class="row mt-4">
+            <div class="col-lg-4 col-sm-10 mx-auto">
+                <form method="GET" action="{{ route('blog') }}">
+                    <div class="input-group input-group-lg">
+                        <input type="text" name="query" class="form-control float-right" placeholder="Search">
+    
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-default"><i class="fas fa-search text-white"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
         <div class="animated fadeIn slow container">
             <div class="row">
                 <div class="col-lg-8 col-md-10 mx-auto text-center">
