@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Article;
+use App\Tag;
 
 class ArticlesController extends Controller
 {
@@ -47,7 +48,8 @@ class ArticlesController extends Controller
     {
         //Return create article page
         return view('articles.create', [
-            'title' => 'Create new article'
+            'title' => 'Create new article',
+            'tags' => Tag::all(),
         ]);
     }
 
@@ -100,7 +102,8 @@ class ArticlesController extends Controller
         $article = Article::findOrFail($id);
         return view('articles.edit', [
             'title' => 'Edit Article',
-            'article' => $article
+            'article' => $article,
+            'tags' => Tag::all(),
         ]);
     }
 

@@ -50,7 +50,11 @@
                                 </td> 
                                 <td>{{ $article->user->name }}</td>
                                 <td>{{ $article->title }}</td>
-                                <td>Laravel, PHP</td>
+                                <td>
+                                    @foreach($article->tags as $tag)
+                                    {{ $tag->name }}
+                                    @endforeach
+                                </td>
                                 <td>{{ $article->created_at }}</td>
                                 <td>{{ $article->updated_at }}</td>
                             </tr>

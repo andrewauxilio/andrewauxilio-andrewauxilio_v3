@@ -78,11 +78,19 @@
                   </div>
                 </div>
 
-                <select class="selectpicker" multiple data-live-search="true">
-                  <option>Mustard</option>
-                  <option>Ketchup</option>
-                  <option>Relish</option>
-                </select>
+                <div class="form-group">
+                  <label>Tags</label>
+                  <select multiple class="custom-select custom-select-sm" name="tags[]">
+                    @foreach($tags as $tag)
+                    <option value="{{ $tag->id}}">{{ $tag->name}}</option>
+                    @endforeach
+                  </select>
+                  @error('tags')
+                  <div class="text-danger">
+                    {{ $errors->message }}
+                  </div>
+                  @enderror
+                </div>
 
               </div>
               <!-- /.card-body -->
