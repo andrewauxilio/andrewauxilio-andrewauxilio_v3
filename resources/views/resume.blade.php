@@ -36,7 +36,7 @@
                     </li>
                     <li>
                         🌐
-                        <a href="http://www.andrewauxilio.me">www.andrewauxilio.me</a>
+                        <a href="https://www.andrewauxilio.dev">www.andrewauxilio.dev</a>
                     </li>
                 </ul>
             </div>
