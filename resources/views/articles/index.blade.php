@@ -37,6 +37,16 @@
                             <tr>
                                 <td>
                                     <a href="{{ route('articles.edit', $article->id) }}" class="btn btn-block btn-primary"><i class="fas fa-edit"></i></a>
+
+                                    <form method="POST" action="{{ route('articles.visible', $article->id) }}">
+                                        @csrf
+                                        @method('PUT')
+                                        @if($article->visible)
+                                        <button type="submit" class="btn btn-block btn-success mt-1"><i class="fas fa-eye"></i></button>
+                                        @else
+                                        <button type="submit" class="btn btn-block btn-danger mt-1"><i class="fas fa-eye-slash"></i></button>
+                                        @endif
+                                    </form>
                                 </td> 
                                 <td>{{ $article->user->name }}</td>
                                 <td>{{ $article->title }}</td>

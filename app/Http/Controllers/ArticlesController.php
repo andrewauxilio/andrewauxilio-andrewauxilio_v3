@@ -30,6 +30,8 @@ class ArticlesController extends Controller
             $articles = Article::orderBy('created_at', 'DESC')->paginate(12);
         }
 
+        //dd($articles);
+
         return view('articles.index', [
             'title' => 'Blog Posts',
             'articles' => $articles 
@@ -121,6 +123,19 @@ class ArticlesController extends Controller
         $article->update($updatedAttributes);
 
         //3. Redirect to blog view
+        return redirect(route('articles.index'));
+    }
+
+    public function updateVisibility(Article $article)
+    {
+        //If else ternary operator. If visible, change visibility to 0. Else
+        //turn visibility to 1.
+        ($article->visible ? $article->visible = 0 : $article->visible = 1);
+
+        //Persist article visibilty 
+        $article->update();
+
+        //Redirect to article index
         return redirect(route('articles.index'));
     }
 
